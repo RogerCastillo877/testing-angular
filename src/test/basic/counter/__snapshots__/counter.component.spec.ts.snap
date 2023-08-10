@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CounterComponent should be equal to snapshot 1`] = `
+<div
+  id="root1"
+>
+  <h2>
+    Counter 10
+  </h2>
+  <hr />
+  <button
+    class="btn btn-primary mx-1"
+  >
+    +1
+  </button>
+  <button
+    class="btn btn-primary mx-1"
+  >
+    -1
+  </button>
+</div>
+`;
