@@ -3,7 +3,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [
+      "jest",
+      "node"
+    ],
+    "include": [
+      "src/**/*",
+      "**/*.spec.ts",
+      "**/*.test.ts"
+    ],
   },
   "files": [
     "src/main.ts"

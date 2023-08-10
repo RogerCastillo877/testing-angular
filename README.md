@@ -1,27 +1,59 @@
 # AngularTesting
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+How to use jest in Angular
 
-## Development server
+## Guide to install jest
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### 1. Remove all references to Jasmine and Karma
 
-## Code scaffolding
+```code
+npm remove @types/jasmine jasmine-core karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### 2. Install Jest
 
-## Build
+```code
+npm i -D jest jest-preset-angular @types/jest
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### 3. Create file config to Jest __config.jest.ts__
 
-## Running unit tests
+#### 4. And put in __config.jest.ts__
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```code
+import "jest-preset-angular/setup-jest";
+```
 
-## Running end-to-end tests
+#### 5. Add this object in __package.json__
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```code
+"jest": {
+"preset": "jest-preset-angular",
+"setupFilesAfterEnv": [
+"<rootDir>/config.jest.ts"
+],
+"moduleNameMapper": {
+"@app/(.)": "<rootDir>/src/app/$1",
+"@src/(.)": "<rootDir>/src/$1"
+}
+}
+```
 
-## Further help
+#### 6. Replace in __tsconfig.spec.json__
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jest" // Antes iba "jasmine"
+    ]
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}
+
+```
