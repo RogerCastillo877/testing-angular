@@ -2,15 +2,18 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "baseUrl": "./",
+    "outDir": "./build",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
     "types": [
       "jest",
       "node"
-    ],
-    "include": [
-      "src/**/*",
-      "**/*.spec.ts",
-      "**/*.test.ts"
     ],
   },
   "files": [
