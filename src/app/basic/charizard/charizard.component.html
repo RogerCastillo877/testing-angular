@@ -1,0 +1,9 @@
+<h2>Pokémon</h2>
+<div *ngIf="!charizard ; else elseBlock">
+  <h3>Loading...</h3>
+</div>
+
+<ng-template #elseBlock>
+  <h3>{{ charizard?.name | titlecase }}</h3>
+  <img [src]="charizard?.sprites?.front_default" [alt]="charizard?.name">
+</ng-template>

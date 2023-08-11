@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharizardComponent shoul be match with snapshot 1`] = `
+"<h2>Pokémon</h2><div><h3>Loading...</h3></div><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container-->"
+`;

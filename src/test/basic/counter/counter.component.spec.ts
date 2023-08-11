@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CounterComponent } from '../../../../src/app/basic/counter/counter.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('CounterComponent', () => {
   let component: CounterComponent;
@@ -8,7 +9,8 @@ describe('CounterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CounterComponent]
+      declarations: [CounterComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
