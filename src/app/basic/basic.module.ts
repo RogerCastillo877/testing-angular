@@ -4,15 +4,15 @@ import { CounterComponent } from './counter/counter.component';
 import { CharizardComponent } from './charizard/charizard.component';
 import { FatherComponent } from './father/father.component';
 import { FatherSonComponent } from './father-son/father-son.component';
-
-
+import { CounterRouteComponent } from './counter-rounte/counter-rounte.component';
 
 @NgModule({
   declarations: [
     CounterComponent,
     CharizardComponent,
     FatherComponent,
-    FatherSonComponent
+    FatherSonComponent,
+    CounterRouteComponent
   ],
   imports: [
     CommonModule
